@@ -1,5 +1,7 @@
 # Audio conferencing starter kit
 
+<img alt="GitHub" src="https://img.shields.io/github/license/aakashraj96/audio-conf-starter-kit"> <img alt="GitHub tag (latest by date)" src="https://img.shields.io/github/v/tag/aakashraj96/audio-conf-starter-kit">
+
 ---
 
 This repository is developed with the aim to make the process of creating your first audio conferencing tool, hassle free. This document explains setting up the tool using an AWS EC2 instance running Ubuntu server, but drawing parallel to your infrastructure of choice should be easy using the links provided to the source document in each section.
@@ -34,8 +36,8 @@ Get an AWS EC2 instance running Ubuntu server 18.
 
 SSH into your EC2 instance and execute these commands:
 
-- `git clone https://github.com/aakashraj96/audio-conf-starter-it.git`
-- `cd audio-conf-starter-it/dependencies`
+- `git clone https://github.com/aakashraj96/audio-conf-starter-kit.git`
+- `cd audio-conf-starter-kit/dependencies`
 - `bash install_primary_dependecies.sh`
 - `bash install_secondary_dependencies.sh`
 
@@ -95,7 +97,7 @@ Insert your EC2 instance public IP in the below command and launch janus server 
 
 ##### 10. Copy client files to nginx folder
 
-- `cd ~/audio-conf-starter-it/` - assuming you cloned this repo to home folder
+- `cd ~/audio-conf-starter-kit/` - assuming you cloned this repo to home folder
 - `cp -a ./client_assets/. /var/www/html/`
 
 That's it! Visit your domain using https, allow permission to access mic and join an audio call.
