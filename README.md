@@ -2,7 +2,7 @@
 
 <img alt="GitHub" src="https://img.shields.io/github/license/aakashraj96/audio-conf-starter-kit"> <img alt="GitHub tag (latest by date)" src="https://img.shields.io/github/v/tag/aakashraj96/audio-conf-starter-kit">
 
-This repository is developed with the aim to make the process of creating your first audio conferencing tool, hassle free. This document explains setting up the tool using an AWS EC2 instance running Ubuntu server, but drawing parallel to your infrastructure of choice should be easy using the links provided to the source document in each section.
+This repository is developed with the aim to make the process of creating your first audio conferencing tool and deploying it, hassle free. This document explains setting up the tool using an AWS EC2 instance running Ubuntu server, but drawing parallel to your infrastructure of choice should be easy using the links provided to the source document in each section. This project is based on [this](https://janus.conf.meetecho.com/audiobridgetest.html) demo.
 
 ## How it works:
 
@@ -13,7 +13,7 @@ There are 2 components to this tool:
 
   ##### Libraries used:
 
-  - [Janus gateway](https://github.com/meetecho/janus-gateway) - A lean multipurpose WebRTC server
+  - [Janus gateway](https://github.com/meetecho/janus-gateway) (v0.10.5 at the time of writing) - A lean multipurpose WebRTC server
   - [Janus javascript API](https://janus.conf.meetecho.com/docs/JS.html) - API developed by Janus to interact with the Janus server.
 
   ##### Architecture
@@ -21,6 +21,8 @@ There are 2 components to this tool:
     <img src="documentation/final_arch.png" alt="drawing" width="600"/>
 
 ## Steps to build:
+
+Refer [Janus gateway repo](https://github.com/meetecho/janus-gateway) for instructions to install Janus server in other platforms.
 
 #### 1. Get an EC2 instance:
 
