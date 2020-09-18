@@ -2,11 +2,7 @@
 
 <img alt="GitHub" src="https://img.shields.io/github/license/aakashraj96/audio-conf-starter-kit"> <img alt="GitHub tag (latest by date)" src="https://img.shields.io/github/v/tag/aakashraj96/audio-conf-starter-kit">
 
----
-
 This repository is developed with the aim to make the process of creating your first audio conferencing tool, hassle free. This document explains setting up the tool using an AWS EC2 instance running Ubuntu server, but drawing parallel to your infrastructure of choice should be easy using the links provided to the source document in each section.
-
----
 
 ## How it works:
 
