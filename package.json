@@ -1,0 +1,17 @@
+{
+  "name": "audio-conf-starter-kit",
+  "version": "1.0.0",
+  "description": "This is a starter kit with instructions and files to setup your own audio conferencing tool. This aims at reducing the hassle of setup, for you to explore further.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "audio",
+    "conferencing",
+    "janus",
+    "gateway"
+  ],
+  "author": "Aakash Raj Udayakumar",
+  "license": "MIT"
+}
