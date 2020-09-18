@@ -20,8 +20,6 @@ There are 2 components to this tool:
 
     <img src="documentation/final_arch.png" alt="drawing" width="600"/>
 
----
-
 ## Steps to build:
 
 #### 1. Get an EC2 instance:
