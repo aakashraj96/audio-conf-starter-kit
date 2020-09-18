@@ -74,9 +74,12 @@ Run the following in your EC2 instance:
 
 #### 8. Launch janus server
 
-Insert your EC2 instance public IP in the below command and launch janus server as a background process in port 8088.
-
-- `/opt/janus/bin/janus --nat-1-1=<EC2_INSTANCE_PUBLIC_IP> --keep-private-host --daemon`
+- Create an empty log file in home folder:
+  `touch janus.log`
+- Add the log file in janus config. In `/opt/janus/etc/janus/janus.jcfg`, uncomment `log_to_file` line and edit it to:
+  `log_to_file = "/home/ubuntu/janus.log"`
+- Insert your EC2 instance public IP in the below command and launch janus server as a background process in port 8088.
+  `sudo /opt/janus/bin/janus --nat-1-1=<EC2_INSTANCE_PUBLIC_IP> --keep-private-host --daemon`
 
 #### 9. Setup a reverse proxy to janus server in nginx config
 
@@ -92,6 +95,6 @@ Insert your EC2 instance public IP in the below command and launch janus server 
 #### 10. Copy client files to nginx folder
 
 - `cd ~/audio-conf-starter-kit/` - assuming you cloned this repo to home folder
-- `cp -a ./client_assets/. /var/www/html/`
+- `sudo cp -a ./client_assets/. /var/www/html/`
 
 That's it! Visit your domain using https, allow permission to access mic and join an audio call.
