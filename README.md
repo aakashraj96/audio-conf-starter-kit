@@ -28,11 +28,11 @@ There are 2 components to this tool:
 
 ## Steps to build:
 
-##### 1. Get an EC2 instance:
+#### 1. Get an EC2 instance:
 
 Get an AWS EC2 instance running Ubuntu server 18.
 
-##### 2. Install dependencies:
+#### 2. Install dependencies:
 
 SSH into your EC2 instance and execute these commands:
 
@@ -41,23 +41,23 @@ SSH into your EC2 instance and execute these commands:
 - `bash install_primary_dependecies.sh`
 - `bash install_secondary_dependencies.sh`
 
-##### 3. Get an elastic IP for your EC2 instance
+#### 3. Get an elastic IP for your EC2 instance
 
 - WebRTC works only in a secure origin (https). Thus, an SSL certificate is needed. Self signed ones work too, but the browser would give a warning and user would have to ignore the warning to reach the site. In order to get a valid third party issued SSL certificate, a domain name is needed. For the domain name to point to the EC2 instance, a reserved public IP (elastic IP) is needed.
 - Create a new elastic IP in your AWS dashboard and associate the IP to the instance you are using.
 
-##### 4. Get a free domain name
+#### 4. Get a free domain name
 
 - There are many free domain name providers. One such provider is https://my.freenom.com
 - After getting a free domain name, go to dns management section in domain name provider website, in type A row, add the elastic public IP as target.
 
-##### 5. Edit security groups
+#### 5. Edit security groups
 
 - Edit your instance's security group and allow port 80 on TCP and port 443 in HTTPs in inbound rules.
   <img src="documentation/inbound_rules.png" alt="drawing" width="800"/>
 - Visiting the domain name (Http) you created in step 4, should show the `Welcome to nginx` page.
 
-##### 6. Install SSL certificate
+#### 6. Install SSL certificate
 
 SSH into your EC2 instance and run the following:
 
@@ -66,7 +66,7 @@ SSH into your EC2 instance and run the following:
 
 Now, your domain name will be accessible using https.
 
-##### 7. Install janus server
+#### 7. Install janus server
 
 Run the following in your EC2 instance:
 
@@ -78,13 +78,13 @@ Run the following in your EC2 instance:
 - `sudo make install`
 - `sudo make configs`
 
-##### 8. Launch janus server
+#### 8. Launch janus server
 
 Insert your EC2 instance public IP in the below command and launch janus server as a background process in port 8088.
 
 - `/opt/janus/bin/janus --nat-1-1=<EC2_INSTANCE_PUBLIC_IP> --keep-private-host --daemon`
 
-##### 9. Setup a reverse proxy to janus server in nginx config
+#### 9. Setup a reverse proxy to janus server in nginx config
 
 - Open nginx config present in `/etc/nginx/sites-available`. Setup reverse proxy to janus server by pasting following inside the ssh server block. To identify easily, paste the following block below `server_name <Your_domain_name>; # managed by Certbot`:
 
@@ -95,7 +95,7 @@ Insert your EC2 instance public IP in the below command and launch janus server 
 - Restart nginx for config to reflect:
   `sudo systemctl restart nginx`
 
-##### 10. Copy client files to nginx folder
+#### 10. Copy client files to nginx folder
 
 - `cd ~/audio-conf-starter-kit/` - assuming you cloned this repo to home folder
 - `cp -a ./client_assets/. /var/www/html/`
